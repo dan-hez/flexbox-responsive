@@ -3,11 +3,21 @@
  * {
    margin: 0;
    padding: 0;
+   <¡-- ayuda a contener todo lo realizado y no se salga --!>
    box-sizing: border-box;
  }
 
  .container{
    background-color: #ccc;
+   width: 90%;
+   max-width: 1000px;
+   margin: auto;
+
+  /* flex*/
+  display: flex;
+  /* flex-direction: row;
+  flex-wrap: wrap;*/
+  flex-flow: row wrap;
  }
 
  body{
@@ -16,21 +26,120 @@
 
  header{
    background-color: #2c3e50;
+   width: 100%;
+   padding: 20px;
+   /*flex*/
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+   flex-wrap: wrap;
  }
-
- main{
+header .logo figure img{
+  width: 50px;
+  vertical-align: top;
+}
+header .logo a{
+  color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+  /* alinear verticalmente*/
+  line-height: 50px;
+}
+header nav{
+  width: 50%;
+  /* flex*/
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+header nav a{
+  background-color: #c0392b;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  /*hace expndir botones con 1 o 0, encendido o apagado*/
+  flex-grow: 1;
+}
+header nav a:hover, footer .links a:hover{
+  background-color: #e74c3c; 
+}
+.sections{
+  background-color: #fff;
+  padding: 20px;
+   /* flex*/
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 70%;
+  /* flex: 1 1 70% tambien se puede poner para resumir*/
+}
+.sections article{
+  margin-bottom: 20px;
+padding-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+/*tomar el ultimo hijo de articulo 
+con nth-last-child y contar 1 para matar
+los estilos*/
+.sections article:nth-last-child(1){
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+/* main{
    background-color: #fff;
- }
+ }*/
 
  aside{
   background-color: #e67e22;
+  padding: 20px;
+  /* flex*/
+  /*declarar ya q estaos en caja madre*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1 0 30%;
  }
-
  aside .widget {
    background-color: #d35400;
+   height: 150px;
+   margin: 10px;
  }
-
  footer{
    background-color: #2c3e50;
+   width: 100%;
+   padding: 20px;
+  /* flex*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
  }
+ footer .links{
+   background-color: #c0392b;
+   display: flex;
+   flex-wrap: wrap;
+ }
+ footer .links a{
+  flex-grow: 1;
+  padding: 1;
+  color: white;
+  text-align: center;
+  text-decoration: none; 
+ }
+footer .social{
+  background-color: #e67e22;
+  text-align: center;
+  display: inline-block;
+}
+footer .social a{
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+
+}
+footer .social a:hover{
+  background-color: #f09a4e;
+}
+
   
